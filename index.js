@@ -1,6 +1,7 @@
 //Завдання 1: Функція для створення символу
 function createSymbol() {
   // Повернемо символ без опису
+  return Symbol();
 }
 
 console.log("Завдання 1 ====================================");
@@ -10,6 +11,8 @@ console.log(createSymbol()); // Виведе Symbol()
 function createSymbolWithDescription(property) {
   // Створюємо символ symbol з описом property
   //Повертаємо опис символа symbol
+  Symbol(property);
+  return Symbol.description;
 }
 
 console.log("Завдання 2 ====================================");
@@ -24,6 +27,9 @@ function createSymbolProperty(property) {
   // Створимо пустий об'єкт
   // Додамо властивість до об'єкту, ключем якої буде наш символ, а значенням буде аргумент property
   // Повертаємо об'єкт
+  let sym = Symbol();
+  let obj = {};
+  
 }
 
 console.log("Завдання 3 ====================================");
@@ -35,6 +41,8 @@ console.log(
 // Функція для створення двох символів з однаковим описом та порівнянням
 function createAndCompareTwoSymbols(value) {
   // Створюємо два символи з однаковим описом value, та повертаємо результат порівняння двох символів
+  const sym1 = Symbol('value');
+  const sym2 = Symbol('value');
 }
 
 console.log("Завдання 4 ====================================");
@@ -48,6 +56,8 @@ function createSymbolForKey(key) {
   // Використовуємо Symbol.for() для створення нового символу symbol зі значенням key
   // Symbol.for() шукає символ в глобальному реєстру символів. Якщо символ з таким ключем вже існує, він повертає його, в іншому випадку створює новий символ з даним ключем та додає його в реєстр
   // Повертаємо створений символ
+  let symbol = Symbol.for(key);
+
 }
 
 // Функція compareSymbolsForKey порівнює два символи за допомогою оператора '==='
@@ -78,6 +88,9 @@ function useSymbolToStringTag() {
   // Створюємо пустий об'єкт myObject.
   // Встановлюємо властивість Symbol об'єкту myObject на значення "CustomObject".
   // Повертаємо рядкове представлення myObject[Symbol].
+  let myObject = {};
+  myObject = Symbol("CustomObject");
+  return myObject[Symbol].toString;
 }
 
 console.log("Завдання 7 ====================================");
@@ -91,6 +104,9 @@ function useSymbolDescription() {
   // Створюємо символ mySymbol зі значенням "mySymbol".
   // Отримуємо опис символу mySymbol в змінну symbolDescription за допомогою властивості description.
   // Повертаємо symbolDescription
+  let mySymbol = Symbol("mySymbol");
+  const symbolDescription = mySymbol.description;
+  return symbolDescription;
 }
 
 console.log("Завдання 8 ====================================");
